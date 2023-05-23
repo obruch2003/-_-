@@ -18,6 +18,7 @@ namespace ООП_Курсовая
         void CarServiceButton(DataGrid CarsDataGrid, DataGrid CarsServiceDataGrid, StackPanel FastChoice, Grid FilterGrid, TextBlock AutoText);//Для DataAdmin
         void AuthorizationButton(Window window);//Для DataAdmin
         void AddButton(Window window);//Для DataAdmin
-        void FilterText(TextBox FilterTextBox, TextBlock TextBlockFilter);//Для DataAdmin      
+        void FilterText(TextBox FilterTextBox, TextBlock TextBlockFilter);//Для DataAdmin
+        void Report(DataGrid CarsDataGrid);//Для DataAdmin
     }
 }

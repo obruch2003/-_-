@@ -279,7 +279,7 @@ namespace ООП_Курсовая
                 TextBlockFilter.Text = "Search in cars ...";
             }
         }
-        public void Report(DataGrid CarsDataGrid)
+        public void Report(DataGrid CarsDataGrid)//Для DataAdmin
         {
             if (CarsDataGrid.Items.Count > 0 && CarsDataGrid.Columns.Count > 0)
             {
