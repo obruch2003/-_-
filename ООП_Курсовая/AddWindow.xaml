@@ -1,0 +1,121 @@
+﻿<Window x:Class="ООП_Курсовая.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AddWindow" 
+        Height="720" 
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+    <Border Background="#eff2f7"
+            CornerRadius="30"
+            MouseDown="Border_MouseDown">
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="Border.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.8" Duration="0:0:0.5" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Border.MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.5" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Border.Triggers>
+        <Grid x:Name="AddGrid" Width="400">
+            <TextBox x:Name="AddTextBox1" Style="{StaticResource AddTexbox}" HorizontalAlignment="Left" Margin="170,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="AddTextBox2" Style="{StaticResource AddTexbox}" HorizontalAlignment="Left" Margin="170,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="AddTextBox3" Style="{StaticResource AddTexbox}" HorizontalAlignment="Left" Margin="170,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,50,0,630" Text="Brand"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,110,0,570" Text="Model"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,170,0,510" Text="Year"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,230,0,450" Text="Price"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,290,0,390" Text="Class"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,350,0,330" Text="Body type"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,410,0,270" Text="Engine's type"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,470,0,210" Text="Engine capacity"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,530,0,150" Text="Transmition"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,590,0,90" Text="Mileage"  Width="150" Foreground="#6e7783" FontSize="18" Padding=" 10 8 10 10"/>
+
+            <ComboBox x:Name="ComboBox1" Style="{StaticResource addComboBox}"  SelectionChanged="Combobox1_SelectionChanged" HorizontalAlignment="Left" Margin="170,50,0,0" VerticalAlignment="Top">
+                <ComboBoxItem>Audi</ComboBoxItem>
+                <ComboBoxItem>Honda</ComboBoxItem>
+                <ComboBoxItem>Mercedes-Benz</ComboBoxItem>
+                <ComboBoxItem>Peugeot</ComboBoxItem>
+                <ComboBoxItem>Toyota</ComboBoxItem>
+                <ComboBoxItem>Volkswagen</ComboBoxItem>
+                <ComboBoxItem>Volvo</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="ComboBox2" Style="{StaticResource addComboBox}" HorizontalAlignment="Left" Margin="170,110,0,0" VerticalAlignment="Top"></ComboBox>
+
+            <ComboBox x:Name="ComboBox3" Style="{StaticResource addComboBox}" HorizontalAlignment="Left" Margin="170,290,0,0" VerticalAlignment="Top">
+                <ComboBoxItem>A</ComboBoxItem>
+                <ComboBoxItem>B</ComboBoxItem>
+                <ComboBoxItem>C</ComboBoxItem>
+                <ComboBoxItem>D</ComboBoxItem>
+                <ComboBoxItem>E</ComboBoxItem>
+                <ComboBoxItem>F</ComboBoxItem>
+                <ComboBoxItem>S</ComboBoxItem>
+                <ComboBoxItem>M</ComboBoxItem>
+                <ComboBoxItem>J</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="ComboBox4" Style="{StaticResource addComboBox}" HorizontalAlignment="Left" Margin="170,350,0,0" VerticalAlignment="Top">
+                <ComboBoxItem>Sedan</ComboBoxItem>
+                <ComboBoxItem>Hatchback</ComboBoxItem>
+                <ComboBoxItem>Wagon</ComboBoxItem>
+                <ComboBoxItem>Liftback</ComboBoxItem>
+                <ComboBoxItem>Coupe</ComboBoxItem>
+                <ComboBoxItem>Convertible</ComboBoxItem>
+                <ComboBoxItem>Roadster</ComboBoxItem>
+                <ComboBoxItem>Stretch</ComboBoxItem>
+                <ComboBoxItem>Crossover</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="ComboBox5" Style="{StaticResource addComboBox}"  SelectionChanged="Combobox5_SelectionChanged" HorizontalAlignment="Left" Margin="170,410,0,0" VerticalAlignment="Top">
+                <ComboBoxItem>Gasoline</ComboBoxItem>
+                <ComboBoxItem>Diesel</ComboBoxItem>
+                <ComboBoxItem>Hybrid</ComboBoxItem>
+                <ComboBoxItem>Electric</ComboBoxItem>
+                <ComboBoxItem>Hydrogen</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="ComboBox6" Style="{StaticResource addComboBox}" HorizontalAlignment="Left" Margin="170,470,0,0" VerticalAlignment="Top"></ComboBox>
+
+            <ComboBox x:Name="ComboBox7" Style="{StaticResource addComboBox}" HorizontalAlignment="Left" Margin="170,530,0,0" VerticalAlignment="Top">
+                <ComboBoxItem>Manual</ComboBoxItem>
+                <ComboBoxItem>Automatic</ComboBoxItem>
+                <ComboBoxItem>Automated manual</ComboBoxItem>
+                <ComboBoxItem>CVT</ComboBoxItem>
+            </ComboBox>
+
+
+            <Button x:Name="CancelButton" Style="{StaticResource closebutton}" HorizontalAlignment="Left" Margin="30,660,0,0" VerticalAlignment="Top" Height="35" Width="150" Click="Cancel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Close" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
+                    <TextBlock Text="Cancel"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="AddButton" Style="{StaticResource Addbutton}" HorizontalAlignment="Left" Margin="220,660,0,0" VerticalAlignment="Top" Height="35" Width="150" Click="Add_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Check" VerticalAlignment="Center" Width="14" Height="14" Margin="0 1 8 0"/>
+                    <TextBlock Text="Add"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Border>
+</Window>
